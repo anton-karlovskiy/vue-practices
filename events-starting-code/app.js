@@ -7,21 +7,19 @@ const app = Vue.createApp({
     };
   },
   watch: {
-    name(value) {
-      if (this.value === '') {
-        this.fullname = '';
-      } else {
-        this.fullname = value + ' ' + 'Karlovskiy';
+    counter(value) {
+      if (value > 50) {
+        this.counter = 0;
       }
     }
   },
   computed: {
-    // fullname() {
-    //   if (this.name === '') {
-    //     return '';
-    //   }
-    //   return this.name + ' ' + 'Karlovskiy';
-    // }
+    fullname() {
+      if (this.name === '') {
+        return '';
+      }
+      return this.name + ' ' + 'Karlovskiy';
+    }
   },
   methods: {
     add(num) {
