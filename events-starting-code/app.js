@@ -6,13 +6,22 @@ const app = Vue.createApp({
       name: ''
     };
   },
-  computed: {
-    fullname() {
-      if (this.name === '') {
-        return '';
+  watch: {
+    name(value) {
+      if (this.value === '') {
+        this.fullname = '';
+      } else {
+        this.fullname = value + ' ' + 'Karlovskiy';
       }
-      return this.name + ' ' + 'Karlovskiy';
     }
+  },
+  computed: {
+    // fullname() {
+    //   if (this.name === '') {
+    //     return '';
+    //   }
+    //   return this.name + ' ' + 'Karlovskiy';
+    // }
   },
   methods: {
     add(num) {
