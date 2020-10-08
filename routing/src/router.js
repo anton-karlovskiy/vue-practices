@@ -72,7 +72,6 @@ router.beforeEach(function(to, from, next) {
   // } else {
   //   next({ name: 'team-members', params: { teamId: 't2' } });
   // }
-  next();
 });
 
 router.afterEach(function(to, from) {
