@@ -19,6 +19,11 @@ export default {
       // this.$router.back();
       // this.$router.forward();
     }
+  },
+  beforeRouteEnter(to, from, next) {
+    console.log('UsersList Cmp beforeRouteEnter');
+    console.log(to, from);
+    next();
   }
 };
 </script>
