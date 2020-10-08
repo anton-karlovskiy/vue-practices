@@ -42,14 +42,27 @@ const router = createRouter({
     { path: '/:notFound(.*)', component: NotFound }
   ],
   linkActiveClass: 'active',
-  scrollBehavior(to, from, savedPosition) {
-    console.log(to, from, savedPosition);
+  scrollBehavior(_, _2, savedPosition) {
+    // console.log(to, from, savedPosition);
     if (savedPosition) {
       return savedPosition;
     } else {
       return { left: 0, top: 0 };
     }
   }
+});
+
+router.beforeEach(function(to, from, next) {
+  console.log('Global beforeEach');
+  console.log(to, from);
+  // next(false);
+  // next('/users');
+  // if (to.name === 'team-members') {
+  //   next();
+  // } else {
+  //   next({ name: 'team-members', params: { teamId: 't2' } });
+  // }
+  next();
 });
 
 const app = createApp(App)
